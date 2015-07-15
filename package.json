@@ -29,5 +29,8 @@
     "eslint": "^0.24.1",
     "eslint-plugin-react": "^2.7.0",
     "jasmine": "^2.3.1"
+  },
+  "peerDependencies": {
+    "react": "^0.13.3"
   }
 }
