@@ -2,7 +2,7 @@
   "name": "react-shallow-testutils",
   "version": "0.0.1",
   "description": "Replacement for TestUtils when using React's shallow rendering",
-  "main": "index.js",
+  "main": "lib/ index.js",
   "scripts": {
     "compile": "babel -d lib/ src/",
     "prepublish": "npm run compile",
