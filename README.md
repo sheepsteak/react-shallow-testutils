@@ -15,6 +15,13 @@ this.renderer = new Renderer();
 const componentTree = this.renderer.render(function componentClass, Object context, Object props);
 ```
 
+### isDOMComponent
+Returns whether the supplied component is a DOM component or not
+
+```javascript
+boolean isDOMComponent(function component)
+```
+
 ### findAll
 
 Traverses the component tree and returns the components that satisfy the supplied function.
