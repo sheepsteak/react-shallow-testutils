@@ -15,6 +15,14 @@ this.renderer = new Renderer();
 const componentTree = this.renderer.render(function componentClass, Object context, Object props);
 ```
 
+### findAll
+
+Traverses the component tree and returns the components that satisfy the supplied function.
+
+```javascript
+array findAll(ReactComponent tree, function test)
+```
+
 ### findAllWithType
 Similar to [scryRenderedComponentsWithType](http://facebook.github.io/react/docs/test-utils.html#scryrenderedcomponentswithtype), finds all components in the tree that match a certain type or DOM tag.
 
