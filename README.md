@@ -15,6 +15,13 @@ this.renderer = new Renderer();
 const componentTree = this.renderer.render(function componentClass, Object context, Object props);
 ```
 
+### isComponentOfType
+Returns whether a component instance is of a particular type.
+
+```javascript
+boolean isComponentOfType(ReactComponent component, function componentClass)
+```
+
 ### isDOMComponent
 Returns whether the supplied component is a DOM component or not
 
