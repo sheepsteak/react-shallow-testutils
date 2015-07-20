@@ -30,36 +30,37 @@ boolean isDOMComponent(function component)
 ```
 
 ### findAll
-
-Traverses the component tree and returns the components that satisfy the supplied function.
+Traverses the tree and returns all components that satisfy the function `test`.
 
 ```javascript
 array findAll(ReactComponent tree, function test)
 ```
 
 ### findAllWithType
-Similar to [scryRenderedComponentsWithType](http://facebook.github.io/react/docs/test-utils.html#scryrenderedcomponentswithtype), finds all components in the tree that match a certain type or DOM tag.
+Finds all instances of components in the tree with a type that matches
+`type`. This is like both React's `scryRenderedDOMComponentsWithTag` and `scryRenderedComponentsWithType` as you can supply a component class or a DOM tag.
 
 ```javascript
 array findAllWithType(ReactComponent tree, function componentClass | string tagName)
 ```
 
 ### findWithType
-Similar to [findRenderedComponentWithType](http://facebook.github.io/react/docs/test-utils.html#findrenderedcomponentwithtype), find one component in the tree that matches a certain type or DOM tag. If none or more than one then throws an error.
+Find only one instance of a components in the tree with a type that matches
+`type`. This is like both React's `findRenderedDOMComponentWithTag` and `findRenderedComponentWithType` as you can supply a component class or a DOM tag.
 
 ```javascript
 ReactComponent findAllType(ReactComponent tree, function componentClass | string tagName)
 ```
 
 ### findAllWithClass
-Similar to [scryRenderedDOMComponentsWithClass](http://facebook.github.io/react/docs/test-utils.html#scryRenderedDOMComponentsWithClass), finds all components in the tree that match a certain class name.
+Finds all instances of components in the tree with a class that matches `className`. This is different to React's `scryRenderedDOMComponentsWithClass` in that it will check **all** components and not just DOM components.
 
 ```javascript
 array findAllWithClass(ReactComponent tree, string className)
 ```
 
 ### findWithClass
-Similar to [findRenderedDOMComponentWithClass](http://facebook.github.io/react/docs/test-utils.html#findRenderedDOMComponentWithClass), find one component in the tree that has a certain class name. If none or more than one then throws an error.
+Find only one instance of a component in the tree with a class that matches `className`. This is different to React's `findRenderedDOMComponentWithClass` in that it will check **all** components and not just DOM components.
 
 ```javascript
 ReactComponent findWithClass(ReactComponent tree, string className)

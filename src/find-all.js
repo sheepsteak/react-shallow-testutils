@@ -1,11 +1,18 @@
 import React from 'react';
 
-export default function findAll(component, test) {
-  let found = test(component) ? [component] : [];
+/**
+ * Traverses the tree and returns all components that satisfy the function `test`.
+ *
+ * @param  {ReactComponent} tree the tree to traverse
+ * @param  {Function} test       the test for each component
+ * @return {Array}               the components that satisfied `test`
+ */
+export default function findAll(tree, test) {
+  let found = test(tree) ? [tree] : [];
 
-  if (React.isValidElement(component)) {
-    if (React.Children.count(component.props.children) > 0) {
-      React.Children.forEach(component.props.children, (child) => {
+  if (React.isValidElement(tree)) {
+    if (React.Children.count(tree.props.children) > 0) {
+      React.Children.forEach(tree.props.children, (child) => {
         found = found.concat(findAll(child, test));
       });
     }
