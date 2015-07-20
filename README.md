@@ -49,7 +49,7 @@ Find only one instance of a components in the tree with a type that matches
 `type`. This is like both React's `findRenderedDOMComponentWithTag` and `findRenderedComponentWithType` as you can supply a component class or a DOM tag.
 
 ```javascript
-ReactComponent findAllType(ReactComponent tree, function componentClass | string tagName)
+ReactComponent findWithType(ReactComponent tree, function componentClass | string tagName)
 ```
 
 ### findAllWithClass
