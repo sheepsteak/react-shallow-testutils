@@ -34,6 +34,18 @@ describe('`findAllWithClass`', function() {
     expect(found.length).toBe(1);
   });
 
+  it('should find one `test-class2.test-class2--modified` components', function() {
+    const found = findAllWithClass(this.tree, 'test-class2.test-class2--modified');
+
+    expect(found.length).toBe(1);
+  });
+
+  it('should find no `test-class2.test-class10--modified` components', function() {
+    const found = findAllWithClass(this.tree, 'test-class2.test-class10');
+
+    expect(found.length).toBe(0);
+  });
+
   it('should find no `test-class10` components', function() {
     const found = findAllWithClass(this.tree, 'test-class10');
 
