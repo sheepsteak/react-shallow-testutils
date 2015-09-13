@@ -1,3 +1,4 @@
 .eslintrc
+.editorconfig
 specs/
 src/
