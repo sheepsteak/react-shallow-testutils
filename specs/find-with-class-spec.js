@@ -26,6 +26,14 @@ describe('`findWithClass`', function() {
     expect(() => findWithClass(this.tree, 'test-class2')).not.toThrow();
   });
 
+  it('should find one `test-class2--modified` component', function() {
+    expect(() => findWithClass(this.tree, 'test-class2--modified')).not.toThrow();
+  });
+
+  it('should find one `test-class2.test-class2--modified` component', function() {
+    expect(() => findWithClass(this.tree, 'test-class2.test-class2--modified')).not.toThrow();
+  });
+
   it('should not find exactly one `test-class` component', function() {
     expect(() => findWithClass(this.tree, 'test-class')).toThrow();
   });

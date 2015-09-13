@@ -11,6 +11,7 @@ describe('`findAllWithClass`', function() {
             <span />
             <div className='test-class test-class--modified' />
             <div className='test-class2 test-class2--modified' />
+            <div className='test-class2 test-class2--modified' />
             <div className='test-class3 test-class3--modified' />
             <span>Some content</span>
           </div>
@@ -28,16 +29,16 @@ describe('`findAllWithClass`', function() {
     expect(found.length).toBe(2);
   });
 
-  it('should find one `test-class2--modified` components', function() {
+  it('should find two `test-class2--modified` component', function() {
     const found = findAllWithClass(this.tree, 'test-class2--modified');
 
-    expect(found.length).toBe(1);
+    expect(found.length).toBe(2);
   });
 
-  it('should find one `test-class2.test-class2--modified` components', function() {
+  it('should find two `test-class2.test-class2--modified` components', function() {
     const found = findAllWithClass(this.tree, 'test-class2.test-class2--modified');
 
-    expect(found.length).toBe(1);
+    expect(found.length).toBe(2);
   });
 
   it('should find no `test-class2.test-class10--modified` components', function() {
