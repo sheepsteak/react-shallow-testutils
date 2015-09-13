@@ -59,9 +59,13 @@ Finds all instances of components in the tree with a class that matches `classNa
 array findAllWithClass(ReactComponent tree, string className)
 ```
 
+You can pass a `className` like `test-class.test-class--modified` to find a component that has both classes.
+
 ### findWithClass
 Find only one instance of a component in the tree with a class that matches `className`. This is different to React's `findRenderedDOMComponentWithClass` in that it will check **all** components and not just DOM components.
 
 ```javascript
 ReactComponent findWithClass(ReactComponent tree, string className)
 ```
+
+You can pass a `className` like `test-class.test-class--modified` to find a component that has both classes
