@@ -20,7 +20,7 @@ describe('`findAllWithClass`', function() {
     }
 
     this.renderer = new Renderer();
-    this.tree = this.renderer.render(TestWithClasses, {}, {});
+    this.tree = this.renderer.render(() => <TestWithClasses />);
   });
 
   it('should find two `test-class` components', function() {

@@ -13,17 +13,21 @@ export default class Renderer {
   constructor() {
     this.renderer = TestUtils.createRenderer();
   }
+
+  get root() {
+    return this.renderer._instance ? this.renderer._instance._instance : null;
+  }
+
   /**
    * Renders the `Component` into the shallow renderer instance.
    *
-   * @param  {ReactComponent} Component the component to render
+   * @param  {Function} fn              the function to call to get React elements
    * @param  {Object} [context={}]      the context to render the component into
-   * @param  {Object} [props={}]        the props to pass into the component
    * @return {ReactComponent}           the rendered tree
    */
-  render(Component, context = {}, props = {}) {
+  render(fn, context = {}) {
     ReactContext.current = context;
-    this.renderer.render(<Component {...props} />, context);
+    this.renderer.render(fn(), context);
     ReactContext.current = {};
 
     return this.renderer.getRenderOutput();
