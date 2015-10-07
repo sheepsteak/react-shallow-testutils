@@ -1,5 +1,5 @@
 import Renderer from '../src/renderer';
-import React from 'react/addons';
+import React from 'react';
 
 class ComponentWithForm extends React.Component {
   constructor() {
