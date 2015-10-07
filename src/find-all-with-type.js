@@ -16,11 +16,7 @@ import findAll from './find-all';
 export default function findAllWithType(tree, type) {
   return findAll(tree, component => {
     if (React.isValidElement(component)) {
-      if (React.isValidElement(component)) {
-        return component.type != null && component.type === type;
-      }
-
-      return false;
+      return component.type != null && component.type === type;
     }
 
     return false;
