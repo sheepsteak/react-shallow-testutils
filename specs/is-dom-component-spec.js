@@ -23,7 +23,7 @@ class Test extends React.Component {
 describe('`isDOMComponent`', function() {
   beforeEach(function() {
     this.renderer = new Renderer();
-    this.tree = this.renderer.render(Test, {}, {});
+    this.tree = this.renderer.render(() => <Test />);
   });
 
   it('should return `true` for a DOM component', function() {

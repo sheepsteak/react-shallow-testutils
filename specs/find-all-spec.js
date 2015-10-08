@@ -41,7 +41,7 @@ class TestWithForm extends React.Component {
 describe('`findAll`', function() {
   beforeEach(function() {
     this.renderer = new Renderer();
-    this.tree = this.renderer.render(TestWithForm, {}, {});
+    this.tree = this.renderer.render(() => <TestWithForm />);
   });
 
   it('should traverse all thirteen items in tree', function() {

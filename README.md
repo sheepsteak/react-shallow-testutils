@@ -10,9 +10,13 @@ npm install react-shallow-testutils
 ### Renderer
 A wrapper around React's [shallow rendering](http://facebook.github.io/react/docs/test-utils.html#shallow-rendering) that makes it easier to use a context.
 
+Takes a function that returns your components to render as well as an optional context:
+
 ```javascript
-this.renderer = new Renderer();
-const componentTree = this.renderer.render(function componentClass, Object context, Object props);
+const renderer = new Renderer();
+const toRender = () => <MyComponent {...props} />;
+const context = {data: 1};
+const componentTree = renderer.render(toRender, context);
 ```
 
 ### isComponentOfType

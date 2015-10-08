@@ -19,7 +19,7 @@ describe('`findWithClass`', function() {
     }
 
     this.renderer = new Renderer();
-    this.tree = this.renderer.render(TestWithClasses, {}, {});
+    this.tree = this.renderer.render(() => <TestWithClasses />);
   });
 
   it('should find `test-class2` component', function() {
