@@ -7,6 +7,10 @@ Replacement for TestUtils when using React's shallow rendering.
 npm install react-shallow-testutils
 ```
 
+### React Versions
+
+If you're using React 0.13 then stick to `0.4.0`. `0.5.0` and onwards will support React 0.14.
+
 ### Renderer
 A wrapper around React's [shallow rendering](http://facebook.github.io/react/docs/test-utils.html#shallow-rendering) that makes it easier to use a context.
 

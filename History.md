@@ -1,3 +1,11 @@
+
+v0.5.0 / 2015-10-08
+==================
+
+Contains a breaking change by using React 0.14
+
+353208e Updated to React 0.14
+
 0.4.0 / 2015-10-08
 ==================
 
