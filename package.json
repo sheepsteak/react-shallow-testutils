@@ -1,6 +1,6 @@
 {
   "name": "react-shallow-testutils",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Replacement for TestUtils when using React's shallow rendering",
   "main": "lib/index.js",
   "scripts": {

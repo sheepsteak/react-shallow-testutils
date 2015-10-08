@@ -1,3 +1,9 @@
+0.4.0 / 2015-10-08
+==================
+
+Contains a breaking change to `Renderer`
+
+7ade3e0 Merge pull request #6 from sheepsteak/renderer-func
 
 0.3.0 / 2015-09-13
 ==================
