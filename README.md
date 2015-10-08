@@ -19,6 +19,17 @@ const context = {data: 1};
 const componentTree = renderer.render(toRender, context);
 ```
 
+`Renderer` also has a `root` getter that allows access to the root component in the rendered output. This is useful for calling methods on the component.
+
+```javascript
+const renderer = new Renderer();
+const toRender = () => <MyComponent {...props} />;
+const context = {data: 1};
+renderer.render(toRender, context);
+const component = renderer.root;
+component.myMethod();
+```
+
 ### isComponentOfType
 Returns whether a component instance is of a particular type.
 

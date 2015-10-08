@@ -1,7 +1,5 @@
-import React from 'react/addons';
-import ReactContext from 'react/lib/ReactContext';
-
-const TestUtils = React.addons.TestUtils;
+import React from 'react';
+import ReactTestUtils from 'react-addons-test-utils';
 
 /**
  * Wraps a React shallow renderer instance that can set a context.
@@ -11,7 +9,7 @@ export default class Renderer {
    * Creates a new `Renderer`
    */
   constructor() {
-    this.renderer = TestUtils.createRenderer();
+    this.renderer = ReactTestUtils.createRenderer();
   }
 
   get root() {
@@ -26,9 +24,7 @@ export default class Renderer {
    * @return {ReactComponent}           the rendered tree
    */
   render(fn, context = {}) {
-    ReactContext.current = context;
     this.renderer.render(fn(), context);
-    ReactContext.current = {};
 
     return this.renderer.getRenderOutput();
   }
