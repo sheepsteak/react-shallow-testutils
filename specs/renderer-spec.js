@@ -1,5 +1,6 @@
+import isComponentOfType from '../src/is-component-of-type';
 import Renderer from '../src/renderer';
-import React from 'react/addons';
+import React from 'react';
 
 class MyComponent extends React.Component {
   static contextTypes = {
@@ -59,7 +60,7 @@ describe('`Renderer`', function() {
 
     const root = renderer.root;
 
-    expect(React.addons.TestUtils.isCompositeComponentWithType(root, MyComponent));
+    expect(isComponentOfType(root, MyComponent));
     expect(root.props.testProp).toBe(2);
   });
 });
