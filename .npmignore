@@ -1,5 +1,7 @@
 .babelrc
 .eslintrc
+.eslintcache
+.eslintignore
 .editorconfig
 specs/
 src/
