@@ -6,7 +6,6 @@ import findWithType from './find-with-type';
 import getMountedInstance from './get-mounted-instance';
 import isComponentOfType from './is-component-of-type';
 import isDOMComponent from './is-dom-component';
-import Renderer from './renderer';
 
 export default {
   findAll,
@@ -16,6 +15,5 @@ export default {
   findWithType,
   getMountedInstance,
   isComponentOfType,
-  isDOMComponent,
-  Renderer
+  isDOMComponent
 };

@@ -1,5 +1,5 @@
 import findWithClass from '../src/find-with-class';
-import Renderer from '../src/renderer';
+import {createRenderer} from 'react-addons-test-utils';
 import React from 'react';
 
 describe('`findWithClass`', function() {
@@ -18,8 +18,9 @@ describe('`findWithClass`', function() {
       }
     }
 
-    this.renderer = new Renderer();
-    this.tree = this.renderer.render(() => <TestWithClasses />);
+    this.renderer = createRenderer();
+    this.renderer.render(<TestWithClasses />);
+    this.tree = this.renderer.getRenderOutput();
   });
 
   it('should find `test-class2` component', function() {

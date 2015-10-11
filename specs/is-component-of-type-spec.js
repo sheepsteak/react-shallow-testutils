@@ -1,6 +1,6 @@
 import isComponentOfType from '../src/is-component-of-type';
 import React from 'react';
-import Renderer from '../src/renderer';
+import {createRenderer} from 'react-addons-test-utils';
 
 class OtherComponent extends React.Component {
   render() {
@@ -30,8 +30,9 @@ class Test extends React.Component {
 
 describe('`isComponentOfType`', function() {
   beforeEach(function() {
-    this.renderer = new Renderer();
-    this.tree = this.renderer.render(() => <Test />);
+    this.renderer = createRenderer();
+    this.renderer.render(<Test />);
+    this.tree = this.renderer.getRenderOutput();
   });
 
   it('should return `true` when a DOM component is the correct type', function() {
