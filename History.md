@@ -1,32 +1,39 @@
 
+v0.6.0 / 2015-10-15
+===================
+
+*Contains a breaking change by removing `Renderer`*
+
+Removed `Renderer` as it's no longer needed with React 0.14 #10
+Added `getMountedInstance` function to retreive the root component from renderer #10
+Added `pre-commit` hook that checks linting and tests #9
+
 v0.5.0 / 2015-10-08
-==================
+===================
 
-Contains a breaking change by using React 0.14
+*Contains a breaking change by using React 0.14*
 
-353208e Updated to React 0.14
+Updated to React 0.14 #8 (plus help from @themouette #2)
 
 0.4.0 / 2015-10-08
 ==================
 
-Contains a breaking change to `Renderer`
+*Contains a breaking change to `Renderer`*
 
-7ade3e0 Merge pull request #6 from sheepsteak/renderer-func
+Changed `render` of `Renderer` to now take a function #6
 
 0.3.0 / 2015-09-13
 ==================
 
-e1dee56 Added some tests for `findWithClass` when using class names with a '.'
-e863f0c Added .editorconfig
-d9c93ef Merge pull request #4 from stefanbuck/mutlipe-class-names
+Add support for multiple class names @stefanbuck #4
 
 0.2.1 / 2015-07-22
 ==================
 
-945c200 Fixed space in package.json entry point
+Fixed space in package.json entry point
 
 0.2.0 / 2015-07-20
 ==================
 
-7327909 Added more documentation
-b0be423 Added `isComponentOfType`
+Added more documentation
+Added `isComponentOfType`
