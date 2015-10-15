@@ -9,29 +9,18 @@ npm install react-shallow-testutils
 
 ### React Versions
 
-If you're using React 0.13 then stick to `0.4.0`. `0.5.0` and onwards will support React 0.14.
+If you're using React 0.13 then stick to `0.4.0` as `0.5.0` and onwards will support React 0.14.
 
-### Renderer
-A wrapper around React's [shallow rendering](http://facebook.github.io/react/docs/test-utils.html#shallow-rendering) that makes it easier to use a context.
-
-Takes a function that returns your components to render as well as an optional context:
+### getMountedInstance
+Returns the mounted component from a shallow renderer. This function will be on the shallow renderer itself in React 0.15 but I've included it in this module for now as it's so useful. It allows you to call instance functions like `forceUpdate`.
 
 ```javascript
-const renderer = new Renderer();
-const toRender = () => <MyComponent {...props} />;
-const context = {data: 1};
-const componentTree = renderer.render(toRender, context);
-```
+import ReactTestUtils from 'react-addons-test-utils';
+import ShallowTestUtils from 'react-shallow-testutils';
 
-`Renderer` also has a `root` getter that allows access to the root component in the rendered output. This is useful for calling methods on the component.
-
-```javascript
-const renderer = new Renderer();
-const toRender = () => <MyComponent {...props} />;
-const context = {data: 1};
-renderer.render(toRender, context);
-const component = renderer.root;
-component.myMethod();
+const renderer = ReactTestUtils.createRenderer();
+renderer.render(<MyComponent />, context);
+const component = ShallowTestUtils.getMountedInstance(renderer);
 ```
 
 ### isComponentOfType

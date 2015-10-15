@@ -1,5 +1,5 @@
 import findAllWithType from '../src/find-all-with-type';
-import Renderer from '../src/renderer';
+import {createRenderer} from 'react-addons-test-utils';
 import React from 'react';
 
 class OtherComponent extends React.Component {
@@ -39,8 +39,9 @@ class TestWithTypes extends React.Component {
 
 describe('`findAllWithType`', function() {
   beforeEach(function() {
-    this.renderer = new Renderer();
-    this.tree = this.renderer.render(() => <TestWithTypes />);
+    this.renderer = createRenderer();
+    this.renderer.render(<TestWithTypes />);
+    this.tree = this.renderer.getRenderOutput();
   });
 
   it('should find three `OtherComponent` components', function() {

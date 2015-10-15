@@ -1,5 +1,5 @@
 import findAll from '../src/find-all';
-import Renderer from '../src/renderer';
+import {createRenderer} from 'react-addons-test-utils';
 import React from 'react';
 
 class OtherComponent extends React.Component {
@@ -40,8 +40,9 @@ class TestWithForm extends React.Component {
 
 describe('`findAll`', function() {
   beforeEach(function() {
-    this.renderer = new Renderer();
-    this.tree = this.renderer.render(() => <TestWithForm />);
+    this.renderer = createRenderer();
+    this.renderer.render(<TestWithForm />);
+    this.tree = this.renderer.getRenderOutput();
   });
 
   it('should traverse all thirteen items in tree', function() {
