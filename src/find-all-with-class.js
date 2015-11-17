@@ -29,7 +29,7 @@ export default function findAllWithClass(tree, className) {
     if (React.isValidElement(component)) {
       if(component.props.className != null) {
 
-        if (className.includes('.')) {
+        if (className.indexOf('.') !== -1) {
           const classNameList = className.split('.');
 
           return classNameList.every(function(val) {
