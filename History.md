@@ -1,4 +1,9 @@
 
+v0.6.1 / 2015-11-17
+==================
+
+Fixed `findAllWithClass` to not use `String.includes` #12
+
 v0.6.0 / 2015-10-15
 ===================
 
