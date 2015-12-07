@@ -77,3 +77,10 @@ ReactComponent findWithClass(ReactComponent tree, string className)
 ```
 
 You can pass a `className` like `test-class.test-class--modified` to find a component that has both classes
+
+### findWithRef
+Find only one instance of a component in the tree with a ref that matches `ref`.
+
+```javascript
+ReactComponent findWithRef(ReactComponent tree, string ref)
+```
