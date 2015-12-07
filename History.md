@@ -1,4 +1,9 @@
 
+v0.7.0 / 2015-12-07
+==================
+
+Added `findWithRef` [#13](https://github.com/sheepsteak/react-shallow-testutils/pull/13) ([@rkovacevic](https://github.com/rkovacevic))
+
 v0.6.1 / 2015-11-17
 ==================
 
