@@ -1,4 +1,9 @@
 
+v0.7.1 / 2015-12-07
+==================
+
+Fixed forgetting to add export for `findWithRef`
+
 v0.7.0 / 2015-12-07
 ==================
 
