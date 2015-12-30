@@ -1,4 +1,4 @@
-import isComponentOfType from '../src/is-component-of-type';
+import {isComponentOfType} from '../src';
 import React from 'react';
 import {createRenderer} from 'react-addons-test-utils';
 

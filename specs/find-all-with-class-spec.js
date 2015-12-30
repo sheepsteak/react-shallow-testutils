@@ -1,4 +1,4 @@
-import findAllWithClass from '../src/find-all-with-class';
+import {findAllWithClass} from '../src';
 import {createRenderer} from 'react-addons-test-utils';
 import React from 'react';
 

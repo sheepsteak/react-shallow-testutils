@@ -1,4 +1,4 @@
-import findAll from '../src/find-all';
+import {findAll} from '../src';
 import {createRenderer} from 'react-addons-test-utils';
 import React from 'react';
 

@@ -1,4 +1,4 @@
-import getMountedInstance from '../src/get-mounted-instance';
+import {getMountedInstance} from '../src';
 import React from 'react';
 import {createRenderer, isCompositeComponentWithType} from 'react-addons-test-utils';
 

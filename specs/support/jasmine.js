@@ -1,4 +1,4 @@
-require('babel/register');
+require('babel-core/register');
 
 process.env.JASMINE_CONFIG_PATH = 'specs/support/jasmine.json';
 
