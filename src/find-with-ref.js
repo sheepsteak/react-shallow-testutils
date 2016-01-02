@@ -5,6 +5,7 @@ import findAll from './find-all';
  * Finds component in the tree with a ref that matches
  * `ref`.
  *
+ * @throws Will throw an error if none or more than one component is found.
  * @param  {ReactComponent} tree    the rendered tree to traverse
  * @param  {String}                 ref to find
  * @return {ReactComponent}         found component

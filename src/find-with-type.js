@@ -8,6 +8,7 @@ import findAllWithType from './find-all-with-type';
  * `findRenderedComponentWithType` as you can supply a component class or a
  * DOM tag.
  *
+ * @throws Will throw an error if none or more than one component is found.
  * @param  {ReactComponent} tree  the rendered tree to traverse
  * @param  {Function|String} type the component type or tag to find
  * @return {ReactComponent}       the matching component
