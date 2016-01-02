@@ -2,25 +2,21 @@ import {findWithRef} from '../src';
 import {createRenderer} from 'react-addons-test-utils';
 import React from 'react';
 
-class OtherComponent extends React.Component {
-  render() {
-    return (
-      <div className='other-component' />
-    );
-  }
+function OtherComponent() {
+  return (
+    <div className='other-component' />
+  );
 }
 
-class TestWithRefs extends React.Component {
-  render() {
-    return (
-      <div className='test-class'>
-        <span />
-        <div className='div-ref-class' ref='div-ref' />
-        <input className='input-ref-class' ref='input-ref' />
-        <OtherComponent ref='other-component-ref' test='test' />
-      </div>
-    );
-  }
+function TestWithRefs() {
+  return (
+    <div className='test-class'>
+      <span />
+      <div className='div-ref-class' ref='div-ref' />
+      <input className='input-ref-class' ref='input-ref' />
+      <OtherComponent ref='other-component-ref' test='test' />
+    </div>
+  );
 }
 
 describe('`findWithRef`', function() {

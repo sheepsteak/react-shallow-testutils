@@ -2,22 +2,18 @@ import {isDOMComponent} from '../src';
 import {createRenderer} from 'react-addons-test-utils';
 import React from 'react';
 
-class OtherComponent extends React.Component {
-  render() {
-    return (
-      <div />
-    );
-  }
+function OtherComponent() {
+  return (
+    <div />
+  );
 }
 
-class Test extends React.Component {
-  render() {
-    return (
-      <div className='test-class'>
-        <OtherComponent />
-      </div>
-    );
-  }
+function Test() {
+  return (
+    <div className='test-class'>
+      <OtherComponent />
+    </div>
+  );
 }
 
 describe('`isDOMComponent`', function() {

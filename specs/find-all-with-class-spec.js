@@ -4,19 +4,17 @@ import React from 'react';
 
 describe('`findAllWithClass`', function() {
   beforeEach(function() {
-    class TestWithClasses extends React.Component {
-      render() {
-        return (
-          <div className='test-class'>
-            <span />
-            <div className='test-class test-class--modified' />
-            <div className='test-class2 test-class2--modified' />
-            <div className='test-class2 test-class2--modified' />
-            <div className='test-class3 test-class3--modified' />
-            <span>Some content</span>
-          </div>
-        );
-      }
+    function TestWithClasses() {
+      return (
+        <div className='test-class'>
+          <span />
+          <div className='test-class test-class--modified' />
+          <div className='test-class2 test-class2--modified' />
+          <div className='test-class2 test-class2--modified' />
+          <div className='test-class3 test-class3--modified' />
+          <span>Some content</span>
+        </div>
+      );
     }
 
     this.renderer = createRenderer();
