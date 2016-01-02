@@ -46,5 +46,8 @@
     "react": "^0.14.0",
     "react-addons-test-utils": "^0.14.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "lodash.get": "^3.7.0",
+    "lodash.isequal": "^3.0.4"
+  }
 }
