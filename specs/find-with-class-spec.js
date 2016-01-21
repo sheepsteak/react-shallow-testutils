@@ -1,4 +1,4 @@
-import findWithClass from '../src/find-with-class';
+import {findWithClass} from '../src';
 import {createRenderer} from 'react-addons-test-utils';
 import React from 'react';
 

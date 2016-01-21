@@ -1,4 +1,4 @@
-import findWithType from '../src/find-with-type';
+import {findWithType} from '../src';
 import {createRenderer} from 'react-addons-test-utils';
 import React from 'react';
 

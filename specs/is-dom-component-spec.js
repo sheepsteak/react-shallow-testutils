@@ -1,4 +1,4 @@
-import isDOMComponent from '../src/is-dom-component';
+import {isDOMComponent} from '../src';
 import {createRenderer} from 'react-addons-test-utils';
 import React from 'react';
 

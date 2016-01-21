@@ -1,4 +1,4 @@
-import findWithRef from '../src/find-with-ref';
+import {findWithRef} from '../src';
 import {createRenderer} from 'react-addons-test-utils';
 import React from 'react';
 
