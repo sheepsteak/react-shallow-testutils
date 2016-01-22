@@ -1,6 +1,11 @@
 
+v1.0.0 / 2016-01-22
+===================
+
+Updated to Babel 6 [#15](https://github.com/sheepsteak/react-shallow-testutils/pull/15)
+
 v0.7.1 / 2015-12-07
-==================
+===================
 
 Fixed forgetting to add export for `findWithRef`
 
