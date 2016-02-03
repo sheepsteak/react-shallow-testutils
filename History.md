@@ -1,3 +1,8 @@
+0.4.1 / 2016-02-03
+==================
+
+Fixed findAllWithClass to not use String.includes #12
+
 0.4.0 / 2015-10-08
 ==================
 
