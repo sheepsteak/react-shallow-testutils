@@ -16,7 +16,7 @@ Returns the mounted component from a shallow renderer. This function will be on 
 
 ```javascript
 import ReactTestUtils from 'react-addons-test-utils';
-import ShallowTestUtils from 'react-shallow-testutils';
+import * as ShallowTestUtils from 'react-shallow-testutils';
 
 const renderer = ReactTestUtils.createRenderer();
 renderer.render(<MyComponent />, context);
