@@ -82,5 +82,10 @@ You can pass a `className` like `test-class.test-class--modified` to find a comp
 Find only one instance of a component in the tree with a ref that matches `ref`.
 
 ```javascript
-ReactComponent findWithRef(ReactComponent tree, string ref)
+ReactComponent|ReactComponent[] findWithRef(ReactComponent tree, string ref [, string ref...])
+```
+#### Usage
+```
+const header = ShallowTestUtils.findWithRef(component, 'head')
+const [list, close] = ShallowTestUtils.findWithRef(component, 'list', 'close-button')
 ```
