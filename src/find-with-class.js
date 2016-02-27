@@ -15,7 +15,7 @@ export default function findWithClass(root, className) {
   const found = findAllWithClass(root, className);
 
   if (found.length !== 1) {
-    throw new Error(`Did not find exactly once match for class: ${className}`);
+    throw new Error(`Did not find exactly one match for class: ${className}`);
   }
 
   return found[0];
