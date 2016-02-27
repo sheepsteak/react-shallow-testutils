@@ -279,7 +279,12 @@ expect(findWithClass(renderer.getRenderOutput(), 'my-span')).toThrow(); // More 
 Find only one instance of a component in the tree with a `ref` that matches `ref`. This is only useful for a `ref` that has been defined as a string and not as a function.
 
 ```javascript
-ReactComponent findWithRef(ReactComponent tree, string ref)
+ReactComponent|ReactComponent[] findWithRef(ReactComponent tree, string ref [, string ref...])
+```
+#### Usage
+```
+const header = ShallowTestUtils.findWithRef(component, 'head')
+const [list, close] = ShallowTestUtils.findWithRef(component, 'list', 'close-button')
 ```
 
 ```javascript

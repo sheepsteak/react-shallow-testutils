@@ -46,4 +46,14 @@ describe('`findWithRef`', function() {
     expect(() => findWithRef(this.tree, 'non-existing')).toThrow();
   });
 
+  it('should find multiple refs', function() {
+    expect(findWithRef(this.tree, 'input-ref', 'other-component-ref').length).toBe(2);
+    expect(findWithRef(this.tree, 'input-ref', 'other-component-ref')[0].props.className).toBe('input-ref-class');
+    expect(findWithRef(this.tree, 'input-ref', 'other-component-ref')[1].props.test).toBe('test');
+  });
+
+  it('should not find anything if one of the multiple refs in not found', function() {
+    expect(() => findWithRef(this.tree, 'input-ref', 'non-existing')).toThrow();
+  });
+
 });
