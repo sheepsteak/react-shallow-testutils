@@ -2,30 +2,24 @@ import {isComponentOfType} from '../src';
 import React from 'react';
 import {createRenderer} from 'react-addons-test-utils';
 
-class OtherComponent extends React.Component {
-  render() {
-    return (
-      <div />
-    );
-  }
+function OtherComponent() {
+  return (
+    <div />
+  );
 }
 
-class WrongComponent extends React.Component {
-  render() {
-    return (
-      <div />
-    );
-  }
+function WrongComponent() {
+  return (
+    <div />
+  );
 }
 
-class Test extends React.Component {
-  render() {
-    return (
-      <div className='test-class'>
-        <OtherComponent />
-      </div>
-    );
-  }
+function Test() {
+  return (
+    <div className='test-class'>
+      <OtherComponent />
+    </div>
+  );
 }
 
 describe('`isComponentOfType`', function() {
