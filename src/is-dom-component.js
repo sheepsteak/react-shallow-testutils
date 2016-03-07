@@ -1,9 +1,9 @@
 /**
- * Returns whether a component instance is a DOM component.
+ * Returns whether an element is a DOM element.
  *
- * @param  {ReactElement}     component
- * @return {Boolean}          whether the element is a DOM component
+ * @param  {ReactElement}     element
+ * @return {Boolean}          whether the element is a DOM element
  */
-export default function isDOMComponent(component) {
-  return typeof component.type === 'string';
+export default function isDOMComponent(element) {
+  return typeof element.type === 'string';
 }

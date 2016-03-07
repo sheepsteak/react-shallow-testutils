@@ -2,12 +2,11 @@ import React from 'react';
 import findAll from './find-all';
 
 /**
- * Finds component in the tree with a ref that matches
- * `ref`.
+ * Finds an element in the tree with a ref that matches `ref`.
  *
- * @param  {ReactComponent} tree    the rendered tree to traverse
- * @param  {String}                 ref to find
- * @return {ReactComponent}         found component
+ * @param  {ReactElement} tree    the rendered tree to traverse
+ * @param  {String}               ref to find
+ * @return {ReactElement}         the found element
  */
 export default function findWithRef(tree, ref) {
   const found = findAll(tree, component => {
