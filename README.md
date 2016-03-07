@@ -133,7 +133,8 @@ function MyComponent() {
 const renderer = ReactTestUtils.createRenderer();
 
 renderer.render(<MyComponent />);
-expect(findAll(renderer.getRenderOutput(), (component) => component.type === 'span')).toBe(3);
+const spans = findAll(renderer.getRenderOutput(), (component) => component.type === 'span');
+expect(spans.length).toBe(3);
 ```
 
 ### findAllWithType
@@ -166,8 +167,8 @@ function MyComponent() {
 const renderer = ReactTestUtils.createRenderer();
 
 renderer.render(<MyComponent />);
-expect(findAllWithType(renderer.getRenderOutput(), MyOtherComponent)).toBe(1);
-expect(findAllWithType(renderer.getRenderOutput(), 'span')).toBe(2);
+expect(findAllWithType(renderer.getRenderOutput(), MyOtherComponent).length).toBe(1);
+expect(findAllWithType(renderer.getRenderOutput(), 'span').length).toBe(2);
 ```
 
 ### findWithType
@@ -236,8 +237,8 @@ function MyComponent() {
 const renderer = ReactTestUtils.createRenderer();
 
 renderer.render(<MyComponent />);
-expect(findAllWithClass(renderer.getRenderOutput(), 'my-div')).toBe(0);
-expect(findAllWithClass(renderer.getRenderOutput(), 'my-span')).toBe(2);
+expect(findAllWithClass(renderer.getRenderOutput(), 'my-div').length).toBe(0);
+expect(findAllWithClass(renderer.getRenderOutput(), 'my-span').length).toBe(2);
 ```
 
 ### findWithClass
