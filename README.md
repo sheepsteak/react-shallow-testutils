@@ -58,10 +58,10 @@ expect(myComponent.getCount()).toEqual(10);
 ```
 
 ### isComponentOfType
-Returns whether a component instance is of a particular type.
+Returns whether a `ReactElement` is of a particular type.
 
 ```javascript
-boolean isComponentOfType(ReactComponent component, function componentClass | string tagName)
+boolean isComponentOfType(ReactElement element, function componentClass | string tagName)
 ```
 
 ```javascript
@@ -87,10 +87,10 @@ expect(isComponentOfType(renderer.getRenderOutput(), 'div')).toBe(true);
 ```
 
 ### isDOMComponent
-Returns whether the supplied component is a DOM component or not
+Returns whether the supplied `ReactElement` is a DOM component or not
 
 ```javascript
-boolean isDOMComponent(function component)
+boolean isDOMComponent(ReactElement element)
 ```
 
 ```javascript
@@ -109,10 +109,10 @@ expect(isDOMComponent(renderer.getRenderOutput())).toBe(true);
 ```
 
 ### findAll
-Traverses the tree and returns all components that satisfy the function `test`. A lot of the other functions are implemented in terms of this one.
+Traverses the tree and returns all elements that satisfy the function `test`. A lot of the other functions are implemented in terms of this one.
 
 ```javascript
-array findAll(ReactComponent tree, function test)
+array findAll(ReactElement tree, function test)
 ```
 
 ```javascript
@@ -133,16 +133,16 @@ function MyComponent() {
 const renderer = ReactTestUtils.createRenderer();
 
 renderer.render(<MyComponent />);
-const spans = findAll(renderer.getRenderOutput(), (component) => component.type === 'span');
+const spans = findAll(renderer.getRenderOutput(), (element) => element.type === 'span');
 expect(spans.length).toBe(3);
 ```
 
 ### findAllWithType
-Finds all instances of components in the tree with a type that matches
+Finds all instances of elements in the tree with a type that matches
 `type`. This is like both React's `scryRenderedDOMComponentsWithTag` and `scryRenderedComponentsWithType` as you can supply a component class or a DOM tag.
 
 ```javascript
-array findAllWithType(ReactComponent tree, function componentClass | string tagName)
+array findAllWithType(ReactElement tree, function componentClass | string tagName)
 ```
 
 ```javascript
@@ -172,11 +172,11 @@ expect(findAllWithType(renderer.getRenderOutput(), 'span').length).toBe(2);
 ```
 
 ### findWithType
-Find only one instance of a components in the tree with a type that matches
+Find only one instance of an element in the tree with a type that matches
 `type`. This is like both React's `findRenderedDOMComponentWithTag` and `findRenderedComponentWithType` as you can supply a component class or a DOM tag. It will throw an error if not exactly one instance is found.
 
 ```javascript
-ReactComponent findWithType(ReactComponent tree, function componentClass | string tagName)
+ReactElement findWithType(ReactElement tree, function componentClass | string tagName)
 ```
 
 ```javascript
@@ -207,12 +207,12 @@ expect(findWithType(renderer.getRenderOutput(), 'form')).toThrow();
 
 
 ### findAllWithClass
-Finds all instances of components in the tree with a class that matches `className`. This is different to React's `scryRenderedDOMComponentsWithClass` in that it will check **all** components and not just DOM components.
+Finds all elements in the tree with a `className` prop that matches `className`. This is different to React's `scryRenderedDOMComponentsWithClass` in that it will check **all** components and not just DOM components.
 
-You can pass a `className` like `test-class.test-class--modified` to find a component that has both classes.
+You can pass a `className` like `test-class.test-class--modified` to find an element that has both classes.
 
 ```javascript
-array findAllWithClass(ReactComponent tree, string className)
+array findAllWithClass(ReactElement tree, string className)
 ```
 
 ```javascript
@@ -242,12 +242,12 @@ expect(findAllWithClass(renderer.getRenderOutput(), 'my-span').length).toBe(2);
 ```
 
 ### findWithClass
-Find only one instance of a component in the tree with a class that matches `className`. This is different to React's `findRenderedDOMComponentWithClass` in that it will check **all** components and not just DOM components. It will throw an error if not exactly one instance is found.
+Find only one element in the tree with a `className` prop that matches `className`. This is different to React's `findRenderedDOMComponentWithClass` in that it will check **all** components and not just DOM components. It will throw an error if not exactly one instance is found.
 
-You can pass a `className` like `test-class.test-class--modified` to find a component that has both classes.
+You can pass a `className` like `test-class.test-class--modified` to find an element that has both classes.
 
 ```javascript
-ReactComponent findWithClass(ReactComponent tree, string className)
+ReactElement findWithClass(ReactElement tree, string className)
 ```
 
 ```javascript
@@ -277,10 +277,10 @@ expect(findWithClass(renderer.getRenderOutput(), 'my-span')).toThrow(); // More 
 ```
 
 ### findWithRef
-Find only one instance of a component in the tree with a `ref` that matches `ref`. This is only useful for a `ref` that has been defined as a string and not as a function.
+Find only one element in the tree with a `ref` prop that matches `ref`. This is only useful for a `ref` that has been defined as a string and not as a function.
 
 ```javascript
-ReactComponent findWithRef(ReactComponent tree, string ref)
+ReactElement findWithRef(ReactElement tree, string ref)
 ```
 
 ```javascript
