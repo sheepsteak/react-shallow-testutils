@@ -1,6 +1,10 @@
 ---
 parser: "babel-eslint"
 
+extends:
+  - "eslint:recommended"
+  - "plugin:react/recommended"
+
 env:
   es6: true
   node: true
@@ -31,18 +35,10 @@ rules:
   "jsx-quotes":
     - 2
     - prefer-single
-  "react/jsx-no-undef": 2
   "react/jsx-sort-props": 1
-  "react/jsx-sort-prop-types":
+  "react/sort-prop-types":
     - 2
     - ignoreCase: true
-  "react/jsx-uses-react": 2
-  "react/jsx-uses-vars": 2
-  "react/no-did-mount-set-state": 2
-  "react/no-did-update-set-state": 2
   "react/no-multi-comp": 2
-  "react/no-unknown-property": 2
-  "react/prop-types": 1
-  "react/react-in-jsx-scope": 2
   "react/self-closing-comp": 2
   "react/wrap-multilines": 2
