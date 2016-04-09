@@ -1,4 +1,11 @@
 
+v2.0.0-beta1 / 2016-04-09
+===================
+
+Updated to `react@15` [#30](https://github.com/sheepsteak/react-shallow-testutils/pull/30)
+Updated ESLint and Babel
+Added `npm run clean` command
+
 v1.0.0 / 2016-01-22
 ===================
 
