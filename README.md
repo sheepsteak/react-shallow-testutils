@@ -31,32 +31,6 @@ import * as ShallowTestUtils from 'react-shallow-testutils';
 ShallowTestUtils.findWithType(tree, …);
 ```
 
-### getMountedInstance
-Returns the mounted component from a shallow renderer. This function will be on the shallow renderer itself in React 15 but it's included in this module for now as it's so useful. It allows you to call instance functions like `forceUpdate`.
-
-**This won't work with stateless components** as React doesn't keep a reference to the component. Also, since they are functions they won't have any instance functions on them to call anyway!
-
-```javascript
-import React, {Component} from 'react';
-import ReactTestUtils from 'react-addons-test-utils';
-import {getMountedInstance} from 'react-shallow-testutils';
-
-class MyComponent extends Component {
-  getCount() {
-    return this.props.count;
-  }
-  render() {
-    return <div>{this.props.count}</div>;
-  }
-}
-
-const renderer = ReactTestUtils.createRenderer();
-
-renderer.render(<MyComponent count={10} />);
-const myComponent = getMountedInstance(renderer);
-expect(myComponent.getCount()).toEqual(10);
-```
-
 ### isComponentOfType
 Returns whether a `ReactElement` is of a particular type.
 
