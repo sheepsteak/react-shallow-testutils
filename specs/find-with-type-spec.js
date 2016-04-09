@@ -28,8 +28,7 @@ class TestWithTypes extends React.Component {
 describe('`findWithType`', function() {
   beforeEach(function() {
     this.renderer = createRenderer();
-    this.renderer.render(<TestWithTypes />);
-    this.tree = this.renderer.getRenderOutput();
+    this.tree = this.renderer.render(<TestWithTypes />);
   });
 
   it('should find `OtherComponent` component', function() {
