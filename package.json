@@ -4,9 +4,10 @@
   "description": "Replacement for TestUtils when using React's shallow rendering",
   "main": "lib/index.js",
   "scripts": {
+    "clean": "rimraf lib/",
     "compile": "babel -d lib/ src/",
     "lint": "eslint --cache .",
-    "prepublish": "npm run compile",
+    "prepublish": "npm run clean && npm run compile",
     "test": "node specs/support/jasmine"
   },
   "pre-commit": [
@@ -40,7 +41,8 @@
     "jasmine": "^2.3.1",
     "pre-commit": "^1.1.1",
     "react": "^0.14.0",
-    "react-addons-test-utils": "^0.14.0"
+    "react-addons-test-utils": "^0.14.0",
+    "rimraf": "2.5.2"
   },
   "peerDependencies": {
     "react": "^0.14.0",
