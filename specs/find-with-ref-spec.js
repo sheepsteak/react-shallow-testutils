@@ -26,8 +26,7 @@ class TestWithRefs extends React.Component {
 describe('`findWithRef`', function() {
   beforeEach(function() {
     this.renderer = createRenderer();
-    this.renderer.render(<TestWithRefs />);
-    this.tree = this.renderer.getRenderOutput();
+    this.tree = this.renderer.render(<TestWithRefs />);
   });
 
   it('should find `OtherComponent` component', function() {

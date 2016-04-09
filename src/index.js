@@ -4,6 +4,5 @@ export findAllWithType from './find-all-with-type';
 export findWithClass from './find-with-class';
 export findWithRef from './find-with-ref';
 export findWithType from './find-with-type';
-export getMountedInstance from './get-mounted-instance';
 export isComponentOfType from './is-component-of-type';
 export isDOMComponent from './is-dom-component';

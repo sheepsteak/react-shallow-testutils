@@ -31,8 +31,7 @@ class Test extends React.Component {
 describe('`isComponentOfType`', function() {
   beforeEach(function() {
     this.renderer = createRenderer();
-    this.renderer.render(<Test />);
-    this.tree = this.renderer.getRenderOutput();
+    this.tree = this.renderer.render(<Test />);
   });
 
   it('should return `true` when a DOM component is the correct type', function() {

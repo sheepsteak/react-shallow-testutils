@@ -31,32 +31,6 @@ import * as ShallowTestUtils from 'react-shallow-testutils';
 ShallowTestUtils.findWithType(tree, …);
 ```
 
-### getMountedInstance
-Returns the mounted component from a shallow renderer. This function will be on the shallow renderer itself in React 15 but it's included in this module for now as it's so useful. It allows you to call instance functions like `forceUpdate`.
-
-**This won't work with stateless components** as React doesn't keep a reference to the component. Also, since they are functions they won't have any instance functions on them to call anyway!
-
-```javascript
-import React, {Component} from 'react';
-import ReactTestUtils from 'react-addons-test-utils';
-import {getMountedInstance} from 'react-shallow-testutils';
-
-class MyComponent extends Component {
-  getCount() {
-    return this.props.count;
-  }
-  render() {
-    return <div>{this.props.count}</div>;
-  }
-}
-
-const renderer = ReactTestUtils.createRenderer();
-
-renderer.render(<MyComponent count={10} />);
-const myComponent = getMountedInstance(renderer);
-expect(myComponent.getCount()).toEqual(10);
-```
-
 ### isComponentOfType
 Returns whether a `ReactElement` is of a particular type.
 
@@ -79,11 +53,11 @@ function MyComponent() {
 
 const renderer = ReactTestUtils.createRenderer();
 
-renderer.render(<MyComponent />);
-expect(isComponentOfType(renderer.getRenderOutput(), OtherComponent)).toBe(true);
+const tree1 = renderer.render(<MyComponent />);
+expect(isComponentOfType(tree1, OtherComponent)).toBe(true);
 
-renderer.render(<MyOtherComponent />);
-expect(isComponentOfType(renderer.getRenderOutput(), 'div')).toBe(true);
+const tree2 = renderer.render(<MyOtherComponent />);
+expect(isComponentOfType(tree2, 'div')).toBe(true);
 ```
 
 ### isDOMComponent
@@ -104,8 +78,8 @@ function MyComponent() {
 
 const renderer = ReactTestUtils.createRenderer();
 
-renderer.render(<MyComponent />);
-expect(isDOMComponent(renderer.getRenderOutput())).toBe(true);
+const tree = renderer.render(<MyComponent />);
+expect(isDOMComponent(tree)).toBe(true);
 ```
 
 ### findAll
@@ -132,8 +106,8 @@ function MyComponent() {
 
 const renderer = ReactTestUtils.createRenderer();
 
-renderer.render(<MyComponent />);
-const spans = findAll(renderer.getRenderOutput(), (element) => element.type === 'span');
+const tree = renderer.render(<MyComponent />);
+const spans = findAll(tree, (element) => element.type === 'span');
 expect(spans.length).toBe(3);
 ```
 
@@ -166,9 +140,9 @@ function MyComponent() {
 
 const renderer = ReactTestUtils.createRenderer();
 
-renderer.render(<MyComponent />);
-expect(findAllWithType(renderer.getRenderOutput(), MyOtherComponent).length).toBe(1);
-expect(findAllWithType(renderer.getRenderOutput(), 'span').length).toBe(2);
+const tree = renderer.render(<MyComponent />);
+expect(findAllWithType(tree, MyOtherComponent).length).toBe(1);
+expect(findAllWithType(tree, 'span').length).toBe(2);
 ```
 
 ### findWithType
@@ -200,11 +174,10 @@ function MyComponent() {
 
 const renderer = ReactTestUtils.createRenderer();
 
-renderer.render(<MyComponent />);
-expect(findWithType(renderer.getRenderOutput(), MyOtherComponent)).not.toThrow();
-expect(findWithType(renderer.getRenderOutput(), 'form')).toThrow();
+const tree = renderer.render(<MyComponent />);
+expect(findWithType(tree, MyOtherComponent)).not.toThrow();
+expect(findWithType(tree, 'form')).toThrow();
 ```
-
 
 ### findAllWithClass
 Finds all elements in the tree with a `className` prop that matches `className`. This is different to React's `scryRenderedDOMComponentsWithClass` in that it will check **all** components and not just DOM components.
@@ -236,9 +209,9 @@ function MyComponent() {
 
 const renderer = ReactTestUtils.createRenderer();
 
-renderer.render(<MyComponent />);
-expect(findAllWithClass(renderer.getRenderOutput(), 'my-div').length).toBe(0);
-expect(findAllWithClass(renderer.getRenderOutput(), 'my-span').length).toBe(2);
+const tree = renderer.render(<MyComponent />);
+expect(findAllWithClass(tree, 'my-div').length).toBe(0);
+expect(findAllWithClass(tree, 'my-span').length).toBe(2);
 ```
 
 ### findWithClass
@@ -271,9 +244,9 @@ function MyComponent() {
 
 const renderer = ReactTestUtils.createRenderer();
 
-renderer.render(<MyComponent />);
-expect(findWithClass(renderer.getRenderOutput(), 'my-div')).not.toThrow();
-expect(findWithClass(renderer.getRenderOutput(), 'my-span')).toThrow(); // More than 1
+const tree = renderer.render(<MyComponent />);
+expect(findWithClass(tree, 'my-div')).not.toThrow();
+expect(findWithClass(tree, 'my-span')).toThrow(); // More than 1
 ```
 
 ### findWithRef
@@ -300,6 +273,6 @@ function MyComponent() {
 
 const renderer = ReactTestUtils.createRenderer();
 
-renderer.render(<MyComponent />);
-expect(findWithRef(renderer.getRenderOutput(), 'div-ref').props.className).toBe('div-ref-class');
+const tree = renderer.render(<MyComponent />);
+expect(findWithRef(tree, 'div-ref').props.className).toBe('div-ref-class');
 ```
