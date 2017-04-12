@@ -1,5 +1,5 @@
 import {findAllWithClass} from '../src';
-import {createRenderer} from 'react-addons-test-utils';
+import {createRenderer} from 'react-test-renderer/shallow';
 import React from 'react';
 
 describe('`findAllWithClass`', function() {

@@ -1,6 +1,6 @@
 import {isComponentOfType} from '../src';
 import React from 'react';
-import {createRenderer} from 'react-addons-test-utils';
+import {createRenderer} from 'react-test-renderer/shallow';
 
 class OtherComponent extends React.Component {
   render() {
