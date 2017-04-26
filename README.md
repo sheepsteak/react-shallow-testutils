@@ -11,7 +11,12 @@ npm install react-shallow-testutils
 
 ## React Versions
 
-If you're using React 0.13 then stick to `0.4.0` as `0.5.0` and onwards will support React 0.14.
+| Version | React version |
+| ------- | ------------- |
+| 0.4.0   | 0.13          |
+| 0.5.0   | 0.14          |
+| 2.0.0   | 15            |
+| 3.0.0   | 15.5.4        |
 
 ## Usage
 
