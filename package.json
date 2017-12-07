@@ -7,7 +7,7 @@
     "clean": "rimraf lib/",
     "compile": "babel -d lib/ src/",
     "lint": "eslint --cache .",
-    "prepublish": "npm run clean && npm run compile",
+    "prepublishOnly": "npm run clean && npm run compile",
     "test": "node specs/support/jasmine"
   },
   "pre-commit": [
