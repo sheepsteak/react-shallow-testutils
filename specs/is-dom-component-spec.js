@@ -1,6 +1,6 @@
-import React from 'react';
-import { createRenderer } from 'react-test-renderer/shallow';
-import { isDOMComponent } from '../src';
+import React from "react";
+import { createRenderer } from "react-test-renderer/shallow";
+import { isDOMComponent } from "../src";
 
 const OtherComponent = () => <div className="other-component" />;
 
@@ -10,7 +10,7 @@ const Test = () => (
   </div>
 );
 
-describe('`isDOMComponent`', () => {
+describe("`isDOMComponent`", () => {
   let renderer;
   let tree;
 
@@ -19,11 +19,11 @@ describe('`isDOMComponent`', () => {
     tree = renderer.render(<Test />);
   });
 
-  it('should return `true` for a DOM component', () => {
+  it("should return `true` for a DOM component", () => {
     expect(isDOMComponent(tree)).toBe(true);
   });
 
-  it('should return `false` for a composite component', () => {
+  it("should return `false` for a composite component", () => {
     expect(isDOMComponent(tree.props.children)).toBe(false);
   });
 });

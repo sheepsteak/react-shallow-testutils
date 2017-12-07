@@ -1,8 +1,8 @@
-import React from 'react';
-import { createRenderer } from 'react-test-renderer/shallow';
-import { findAllWithClass } from '../src';
+import React from "react";
+import { createRenderer } from "react-test-renderer/shallow";
+import { findAllWithClass } from "../src";
 
-describe('`findAllWithClass`', () => {
+describe("`findAllWithClass`", () => {
   let renderer;
   let tree;
 
@@ -22,35 +22,32 @@ describe('`findAllWithClass`', () => {
     tree = renderer.render(<TestWithClasses />);
   });
 
-  it('should find two `test-class` components', () => {
-    const found = findAllWithClass(tree, 'test-class');
+  it("should find two `test-class` components", () => {
+    const found = findAllWithClass(tree, "test-class");
 
     expect(found.length).toBe(2);
   });
 
-  it('should find two `test-class2--modified` component', () => {
-    const found = findAllWithClass(tree, 'test-class2--modified');
+  it("should find two `test-class2--modified` component", () => {
+    const found = findAllWithClass(tree, "test-class2--modified");
 
     expect(found.length).toBe(2);
   });
 
-  it('should find two `test-class2.test-class2--modified` components', () => {
-    const found = findAllWithClass(
-      tree,
-      'test-class2.test-class2--modified',
-    );
+  it("should find two `test-class2.test-class2--modified` components", () => {
+    const found = findAllWithClass(tree, "test-class2.test-class2--modified");
 
     expect(found.length).toBe(2);
   });
 
-  it('should find no `test-class2.test-class10--modified` components', () => {
-    const found = findAllWithClass(tree, 'test-class2.test-class10');
+  it("should find no `test-class2.test-class10--modified` components", () => {
+    const found = findAllWithClass(tree, "test-class2.test-class10");
 
     expect(found.length).toBe(0);
   });
 
-  it('should find no `test-class10` components', () => {
-    const found = findAllWithClass(tree, 'test-class10');
+  it("should find no `test-class10` components", () => {
+    const found = findAllWithClass(tree, "test-class10");
 
     expect(found.length).toBe(0);
   });

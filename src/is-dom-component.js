@@ -5,5 +5,5 @@
  * @return {Boolean}          whether the element is a DOM element
  */
 export default function isDOMComponent(element) {
-  return typeof element.type === 'string';
+  return typeof element.type === "string";
 }

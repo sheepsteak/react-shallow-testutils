@@ -1,4 +1,5 @@
 # react-shallow-testutils
+
 Replacement for TestUtils when using React's shallow rendering.
 
 [![Circle CI](https://circleci.com/gh/sheepsteak/react-shallow-testutils.png?circle-token=acb1a68cfaeb110ccc4901ac8171750fcbadf5b5)](https://circleci.com/gh/sheepsteak/react-shallow-testutils)
@@ -37,6 +38,7 @@ ShallowTestUtils.findWithType(tree, …);
 ```
 
 ### isComponentOfType
+
 Returns whether a `ReactElement` is of a particular type.
 
 ```javascript
@@ -44,9 +46,9 @@ boolean isComponentOfType(ReactElement element, function componentClass | string
 ```
 
 ```javascript
-import React from 'react';
-import {createRenderer} from 'react-test-renderer/shallow';
-import {isComponentOfType} from 'react-shallow-testutils';
+import React from "react";
+import { createRenderer } from "react-test-renderer/shallow";
+import { isComponentOfType } from "react-shallow-testutils";
 
 function MyOtherComponent() {
   return <div />;
@@ -62,10 +64,11 @@ const tree1 = renderer.render(<MyComponent />);
 expect(isComponentOfType(tree1, OtherComponent)).toBe(true);
 
 const tree2 = renderer.render(<MyOtherComponent />);
-expect(isComponentOfType(tree2, 'div')).toBe(true);
+expect(isComponentOfType(tree2, "div")).toBe(true);
 ```
 
 ### isDOMComponent
+
 Returns whether the supplied `ReactElement` is a DOM component or not
 
 ```javascript
@@ -73,9 +76,9 @@ boolean isDOMComponent(ReactElement element)
 ```
 
 ```javascript
-import React from 'react';
-import {createRenderer} from 'react-test-renderer/shallow';
-import {isDOMComponent} from 'react-shallow-testutils';
+import React from "react";
+import { createRenderer } from "react-test-renderer/shallow";
+import { isDOMComponent } from "react-shallow-testutils";
 
 function MyComponent() {
   return <div />;
@@ -88,6 +91,7 @@ expect(isDOMComponent(tree)).toBe(true);
 ```
 
 ### findAll
+
 Traverses the tree and returns all elements that satisfy the function `test`. A lot of the other functions are implemented in terms of this one.
 
 ```javascript
@@ -95,9 +99,9 @@ array findAll(ReactElement tree, function test)
 ```
 
 ```javascript
-import React from 'react';
-import {createRenderer} from 'react-test-renderer/shallow';
-import {findAll} from 'react-shallow-testutils';
+import React from "react";
+import { createRenderer } from "react-test-renderer/shallow";
+import { findAll } from "react-shallow-testutils";
 
 function MyComponent() {
   return (
@@ -112,11 +116,12 @@ function MyComponent() {
 const renderer = createRenderer();
 
 const tree = renderer.render(<MyComponent />);
-const spans = findAll(tree, (element) => element.type === 'span');
+const spans = findAll(tree, element => element.type === "span");
 expect(spans.length).toBe(3);
 ```
 
 ### findAllWithType
+
 Finds all instances of elements in the tree with a type that matches
 `type`. This is like both React's `scryRenderedDOMComponentsWithTag` and `scryRenderedComponentsWithType` as you can supply a component class or a DOM tag.
 
@@ -125,9 +130,9 @@ array findAllWithType(ReactElement tree, function componentClass | string tagNam
 ```
 
 ```javascript
-import React from 'react';
-import {createRenderer} from 'react-test-renderer/shallow';
-import {findAllWithType} from 'react-shallow-testutils';
+import React from "react";
+import { createRenderer } from "react-test-renderer/shallow";
+import { findAllWithType } from "react-shallow-testutils";
 
 function MyOtherComponent() {
   return <div />;
@@ -147,10 +152,11 @@ const renderer = createRenderer();
 
 const tree = renderer.render(<MyComponent />);
 expect(findAllWithType(tree, MyOtherComponent).length).toBe(1);
-expect(findAllWithType(tree, 'span').length).toBe(2);
+expect(findAllWithType(tree, "span").length).toBe(2);
 ```
 
 ### findWithType
+
 Find only one instance of an element in the tree with a type that matches
 `type`. This is like both React's `findRenderedDOMComponentWithTag` and `findRenderedComponentWithType` as you can supply a component class or a DOM tag. It will throw an error if not exactly one instance is found.
 
@@ -159,9 +165,9 @@ ReactElement findWithType(ReactElement tree, function componentClass | string ta
 ```
 
 ```javascript
-import React from 'react';
-import {createRenderer} from 'react-test-renderer/shallow';
-import {findWithType} from 'react-shallow-testutils';
+import React from "react";
+import { createRenderer } from "react-test-renderer/shallow";
+import { findWithType } from "react-shallow-testutils";
 
 function MyOtherComponent() {
   return <div />;
@@ -181,10 +187,11 @@ const renderer = createRenderer();
 
 const tree = renderer.render(<MyComponent />);
 expect(findWithType(tree, MyOtherComponent)).not.toThrow();
-expect(findWithType(tree, 'form')).toThrow();
+expect(findWithType(tree, "form")).toThrow();
 ```
 
 ### findAllWithClass
+
 Finds all elements in the tree with a `className` prop that matches `className`. This is different to React's `scryRenderedDOMComponentsWithClass` in that it will check **all** components and not just DOM components.
 
 You can pass a `className` like `test-class.test-class--modified` to find an element that has both classes.
@@ -194,9 +201,9 @@ array findAllWithClass(ReactElement tree, string className)
 ```
 
 ```javascript
-import React from 'react';
-import {createRenderer} from 'react-test-renderer/shallow';
-import {findAllWithClass} from 'react-shallow-testutils';
+import React from "react";
+import { createRenderer } from "react-test-renderer/shallow";
+import { findAllWithClass } from "react-shallow-testutils";
 
 function MyOtherComponent() {
   return <div />;
@@ -205,9 +212,9 @@ function MyOtherComponent() {
 function MyComponent() {
   return (
     <div>
-      <span className='my-span' />
+      <span className="my-span" />
       <MyOtherComponent />
-      <span className='my-span' />
+      <span className="my-span" />
     </div>
   );
 }
@@ -215,11 +222,12 @@ function MyComponent() {
 const renderer = createRenderer();
 
 const tree = renderer.render(<MyComponent />);
-expect(findAllWithClass(tree, 'my-div').length).toBe(0);
-expect(findAllWithClass(tree, 'my-span').length).toBe(2);
+expect(findAllWithClass(tree, "my-div").length).toBe(0);
+expect(findAllWithClass(tree, "my-span").length).toBe(2);
 ```
 
 ### findWithClass
+
 Find only one element in the tree with a `className` prop that matches `className`. This is different to React's `findRenderedDOMComponentWithClass` in that it will check **all** components and not just DOM components. It will throw an error if not exactly one instance is found.
 
 You can pass a `className` like `test-class.test-class--modified` to find an element that has both classes.
@@ -229,20 +237,20 @@ ReactElement findWithClass(ReactElement tree, string className)
 ```
 
 ```javascript
-import React from 'react';
-import {createRenderer} from 'react-test-renderer/shallow';
-import {findWithClass} from 'react-shallow-testutils';
+import React from "react";
+import { createRenderer } from "react-test-renderer/shallow";
+import { findWithClass } from "react-shallow-testutils";
 
 function MyOtherComponent() {
-  return <div className='my-div' />;
+  return <div className="my-div" />;
 }
 
 function MyComponent() {
   return (
     <div>
-      <span className='my-span' />
+      <span className="my-span" />
       <MyOtherComponent />
-      <span className='my-span' />
+      <span className="my-span" />
     </div>
   );
 }
@@ -250,11 +258,12 @@ function MyComponent() {
 const renderer = createRenderer();
 
 const tree = renderer.render(<MyComponent />);
-expect(findWithClass(tree, 'my-div')).not.toThrow();
-expect(findWithClass(tree, 'my-span')).toThrow(); // More than 1
+expect(findWithClass(tree, "my-div")).not.toThrow();
+expect(findWithClass(tree, "my-span")).toThrow(); // More than 1
 ```
 
 ### findWithRef
+
 Find only one element in the tree with a `ref` prop that matches `ref`. This is only useful for a `ref` that has been defined as a string and not as a function.
 
 ```javascript
@@ -262,16 +271,16 @@ ReactElement findWithRef(ReactElement tree, string ref)
 ```
 
 ```javascript
-import React from 'react';
-import {createRenderer} from 'react-test-renderer/shallow';
-import {findWithRef} from 'react-shallow-testutils';
+import React from "react";
+import { createRenderer } from "react-test-renderer/shallow";
+import { findWithRef } from "react-shallow-testutils";
 
 function MyComponent() {
   return (
     <div>
-      <span className='my-span' />
-      <div className='div-ref-class' ref='div-ref' />
-      <span className='my-span' />
+      <span className="my-span" />
+      <div className="div-ref-class" ref="div-ref" />
+      <span className="my-span" />
     </div>
   );
 }
@@ -279,5 +288,5 @@ function MyComponent() {
 const renderer = createRenderer();
 
 const tree = renderer.render(<MyComponent />);
-expect(findWithRef(tree, 'div-ref').props.className).toBe('div-ref-class');
+expect(findWithRef(tree, "div-ref").props.className).toBe("div-ref-class");
 ```

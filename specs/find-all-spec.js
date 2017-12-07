@@ -1,6 +1,6 @@
-import React from 'react';
-import { createRenderer } from 'react-test-renderer/shallow';
-import { findAll } from '../src';
+import React from "react";
+import { createRenderer } from "react-test-renderer/shallow";
+import { findAll } from "../src";
 
 const OtherComponent = () => <div className="other-component" />;
 
@@ -20,7 +20,7 @@ const TestWithForm = () => (
   </div>
 );
 
-describe('`findAll`', () => {
+describe("`findAll`", () => {
   let renderer;
   let tree;
 
@@ -29,7 +29,7 @@ describe('`findAll`', () => {
     tree = renderer.render(<TestWithForm />);
   });
 
-  it('should traverse all thirteen items in tree', () => {
+  it("should traverse all thirteen items in tree", () => {
     let traversed = 0;
 
     findAll(tree, () => {
@@ -39,18 +39,18 @@ describe('`findAll`', () => {
     expect(traversed).toBe(13);
   });
 
-  it('should traverse child-first', () => {
+  it("should traverse child-first", () => {
     let traversed = 0;
 
-    findAll(tree, (component) => {
+    findAll(tree, component => {
       traversed += 1;
 
       switch (traversed) {
         case 1:
-          expect(component.props.className).toBe('test-class');
+          expect(component.props.className).toBe("test-class");
           break;
         case 6:
-          expect(component.type).toBe('form');
+          expect(component.type).toBe("form");
           break;
         case 11:
           expect(component.type).toBe(OtherComponent);

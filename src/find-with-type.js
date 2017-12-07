@@ -1,4 +1,4 @@
-import findAllWithType from './find-all-with-type';
+import findAllWithType from "./find-all-with-type";
 
 /**
  * Find only one element in the tree with a `type` prop that matches `type`.

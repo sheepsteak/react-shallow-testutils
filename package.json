@@ -7,11 +7,13 @@
     "clean": "rimraf lib/",
     "compile": "babel -d lib/ src/",
     "lint": "eslint --cache .",
+    "lint-staged": "lint-staged",
     "prepublishOnly": "npm run clean && npm run compile",
     "test": "node specs/support/jasmine"
   },
   "pre-commit": [
     "lint",
+    "lint-staged",
     "test"
   ],
   "repository": {
@@ -29,6 +31,12 @@
     "url": "https://github.com/sheepsteak/react-shallow-testutils/issues"
   },
   "homepage": "https://github.com/sheepsteak/react-shallow-testutils#readme",
+  "lint-staged": {
+    "*.{js,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "devDependencies": {
     "babel-cli": "6.26.0",
     "babel-core": "6.26.0",
@@ -38,11 +46,14 @@
     "babel-preset-react": "6.24.1",
     "eslint": "4.12.1",
     "eslint-config-airbnb": "16.1.0",
+    "eslint-config-prettier": "2.9.0",
     "eslint-plugin-import": "2.8.0",
     "eslint-plugin-jsx-a11y": "6.0.2",
     "eslint-plugin-react": "7.5.1",
     "jasmine": "^2.3.1",
+    "lint-staged": "6.0.0",
     "pre-commit": "^1.1.1",
+    "prettier": "1.9.1",
     "react": "^15.5.4",
     "react-test-renderer": "^15.5.4",
     "rimraf": "2.5.2"

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 /**
  * Traverses the tree and returns all elements that satisfy the function `test`.
@@ -12,7 +12,7 @@ export default function findAll(tree, test) {
 
   if (React.isValidElement(tree)) {
     if (React.Children.count(tree.props.children) > 0) {
-      React.Children.forEach(tree.props.children, (child) => {
+      React.Children.forEach(tree.props.children, child => {
         found = found.concat(findAll(child, test));
       });
     }

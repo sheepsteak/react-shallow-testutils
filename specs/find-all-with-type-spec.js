@@ -1,14 +1,10 @@
-import React from 'react';
-import { createRenderer } from 'react-test-renderer/shallow';
-import { findAllWithType } from '../src';
+import React from "react";
+import { createRenderer } from "react-test-renderer/shallow";
+import { findAllWithType } from "../src";
 
-const OtherComponent = () => (
-  <div className="other-component" />
-);
+const OtherComponent = () => <div className="other-component" />;
 
-const YetAnotherComponent = () => (
-  <div className="other-component" />
-);
+const YetAnotherComponent = () => <div className="other-component" />;
 
 const TestWithTypes = () => (
   <div className="test-class">
@@ -25,7 +21,7 @@ const TestWithTypes = () => (
   </div>
 );
 
-describe('`findAllWithType`', () => {
+describe("`findAllWithType`", () => {
   let renderer;
   let tree;
 
@@ -34,26 +30,26 @@ describe('`findAllWithType`', () => {
     tree = renderer.render(<TestWithTypes />);
   });
 
-  it('should find three `OtherComponent` components', () => {
+  it("should find three `OtherComponent` components", () => {
     const found = findAllWithType(tree, OtherComponent);
 
     expect(found.length).toBe(3);
   });
 
-  it('should find three `YetAnotherComponent` components', () => {
+  it("should find three `YetAnotherComponent` components", () => {
     const found = findAllWithType(tree, YetAnotherComponent);
 
     expect(found.length).toBe(3);
   });
 
-  it('should find four `div` components', () => {
-    const found = findAllWithType(tree, 'div');
+  it("should find four `div` components", () => {
+    const found = findAllWithType(tree, "div");
 
     expect(found.length).toBe(4);
   });
 
-  it('should find no `button` components', () => {
-    const found = findAllWithType(tree, 'button');
+  it("should find no `button` components", () => {
+    const found = findAllWithType(tree, "button");
 
     expect(found.length).toBe(0);
   });

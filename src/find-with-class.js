@@ -1,4 +1,4 @@
-import findAllWithClass from './find-all-with-class';
+import findAllWithClass from "./find-all-with-class";
 
 /**
  * Find only one element in the tree with a `className` prop that matches

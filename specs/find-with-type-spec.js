@@ -1,6 +1,6 @@
-import React from 'react';
-import { createRenderer } from 'react-test-renderer/shallow';
-import { findWithType } from '../src';
+import React from "react";
+import { createRenderer } from "react-test-renderer/shallow";
+import { findWithType } from "../src";
 
 const OtherComponent = () => <div className="other-component" />;
 
@@ -15,7 +15,7 @@ const TestWithTypes = () => (
   </div>
 );
 
-describe('`findWithType`', () => {
+describe("`findWithType`", () => {
   let renderer;
   let tree;
 
@@ -24,15 +24,15 @@ describe('`findWithType`', () => {
     tree = renderer.render(<TestWithTypes />);
   });
 
-  it('should find `OtherComponent` component', () => {
+  it("should find `OtherComponent` component", () => {
     expect(() => findWithType(tree, OtherComponent)).not.toThrow();
   });
 
-  it('should not find exactly one `div` component', () => {
-    expect(() => findWithType(tree, 'div')).toThrow();
+  it("should not find exactly one `div` component", () => {
+    expect(() => findWithType(tree, "div")).toThrow();
   });
 
-  it('should not find `button` component', () => {
-    expect(() => findWithType(tree, 'button')).toThrow();
+  it("should not find `button` component", () => {
+    expect(() => findWithType(tree, "button")).toThrow();
   });
 });
