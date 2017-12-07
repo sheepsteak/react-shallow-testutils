@@ -1,36 +1,29 @@
-import {isDOMComponent} from '../src';
-import {createRenderer} from 'react-test-renderer/shallow';
 import React from 'react';
+import { createRenderer } from 'react-test-renderer/shallow';
+import { isDOMComponent } from '../src';
 
-class OtherComponent extends React.Component {
-  render() {
-    return (
-      <div />
-    );
-  }
-}
+const OtherComponent = () => <div className="other-component" />;
 
-class Test extends React.Component {
-  render() {
-    return (
-      <div className='test-class'>
-        <OtherComponent />
-      </div>
-    );
-  }
-}
+const Test = () => (
+  <div className="test-class">
+    <OtherComponent />
+  </div>
+);
 
-describe('`isDOMComponent`', function() {
-  beforeEach(function() {
-    this.renderer = createRenderer();
-    this.tree = this.renderer.render(<Test />);
+describe('`isDOMComponent`', () => {
+  let renderer;
+  let tree;
+
+  beforeEach(() => {
+    renderer = createRenderer();
+    tree = renderer.render(<Test />);
   });
 
-  it('should return `true` for a DOM component', function() {
-    expect(isDOMComponent(this.tree)).toBe(true);
+  it('should return `true` for a DOM component', () => {
+    expect(isDOMComponent(tree)).toBe(true);
   });
 
-  it('should return `false` for a composite component', function() {
-    expect(isDOMComponent(this.tree.props.children)).toBe(false);
+  it('should return `false` for a composite component', () => {
+    expect(isDOMComponent(tree.props.children)).toBe(false);
   });
 });

@@ -1,66 +1,51 @@
-import {findAll} from '../src';
-import {createRenderer} from 'react-test-renderer/shallow';
 import React from 'react';
+import { createRenderer } from 'react-test-renderer/shallow';
+import { findAll } from '../src';
 
-class OtherComponent extends React.Component {
-  render() {
-    return (
-      <div className='other-component' />
-    );
-  }
-}
+const OtherComponent = () => <div className="other-component" />;
 
-class TestWithForm extends React.Component {
-  render() {
-    return (
-      <div className='test-class'>
-        <span />
-        <div className='test-class test-class--modified' />
-        <div className='test-class2 test-class2--modified' />
-        <div className='test-class3 test-class3--modified' />
-        <form
-          action='/'
-          method='post'>
-          <input
-            id='test'
-            name='test'
-            type='text' />
-          <input
-            id='test2'
-            name='test2'
-            type='text' />
-          <button>Send</button>
-        </form>
-        <OtherComponent />
-        <span>Some content</span>
-      </div>
-    );
-  }
-}
+const TestWithForm = () => (
+  <div className="test-class">
+    <span />
+    <div className="test-class test-class--modified" />
+    <div className="test-class2 test-class2--modified" />
+    <div className="test-class3 test-class3--modified" />
+    <form action="/" method="post">
+      <input id="test" name="test" type="text" />
+      <input id="test2" name="test2" type="text" />
+      <button>Send</button>
+    </form>
+    <OtherComponent />
+    <span>Some content</span>
+  </div>
+);
 
-describe('`findAll`', function() {
-  beforeEach(function() {
-    this.renderer = createRenderer();
-    this.tree = this.renderer.render(<TestWithForm />);
+describe('`findAll`', () => {
+  let renderer;
+  let tree;
+
+  beforeEach(() => {
+    renderer = createRenderer();
+    tree = renderer.render(<TestWithForm />);
   });
 
-  it('should traverse all thirteen items in tree', function() {
+  it('should traverse all thirteen items in tree', () => {
     let traversed = 0;
 
-    findAll(this.tree, () => {
-      traversed++;
+    findAll(tree, () => {
+      traversed += 1;
     });
 
     expect(traversed).toBe(13);
   });
 
-  it('should traverse child-first', function() {
+  it('should traverse child-first', () => {
     let traversed = 0;
 
-    findAll(this.tree, component => {
-      traversed++;
+    findAll(tree, (component) => {
+      traversed += 1;
 
-      switch(traversed) {
+      switch (traversed) {
         case 1:
           expect(component.props.className).toBe('test-class');
           break;
@@ -69,6 +54,8 @@ describe('`findAll`', function() {
           break;
         case 11:
           expect(component.type).toBe(OtherComponent);
+          break;
+        default:
           break;
       }
     });

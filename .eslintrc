@@ -1,44 +1,16 @@
----
-parser: "babel-eslint"
+parser: babel-eslint
 
 extends:
-  - "eslint:recommended"
-  - "plugin:react/recommended"
+  - airbnb
 
 env:
   es6: true
   node: true
   browser: true
 
-plugins:
-  - react
-
-ecmaFeatures:
-  modules: true
-  jsx: true
-
 rules:
-  quotes:
-    - 2
-    - single
-  strict:
-    - 2
-    - never
-  "one-var":
-    - 2
-    - never
-  "no-underscore-dangle": 0
-  "no-use-before-define":
-    - 2
-    - nofunc
-  "react/jsx-boolean-value": 2
-  "jsx-quotes":
-    - 2
-    - prefer-single
-  "react/jsx-sort-props": 1
-  "react/sort-prop-types":
-    - 2
-    - ignoreCase: true
-  "react/no-multi-comp": 2
-  "react/self-closing-comp": 2
-  "react/wrap-multilines": 2
+  react/jsx-filename-extension:
+    - 1
+    - extensions:
+      - ".js"
+      - ".jsx"

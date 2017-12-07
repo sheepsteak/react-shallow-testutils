@@ -9,7 +9,7 @@ import findAll from './find-all';
  * @return {ReactElement}         the found element
  */
 export default function findWithRef(tree, ref) {
-  const found = findAll(tree, component => {
+  const found = findAll(tree, (component) => {
     if (React.isValidElement(component)) {
       return component.ref != null && component.ref === ref;
     }

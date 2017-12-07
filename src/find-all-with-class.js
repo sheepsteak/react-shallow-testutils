@@ -24,16 +24,13 @@ function hasClassName(classNameList, className) {
  * @return {Array}              all matching elements
  */
 export default function findAllWithClass(tree, className) {
-  return findAll(tree, component => {
+  return findAll(tree, (component) => {
     if (React.isValidElement(component)) {
-      if(component.props.className != null) {
-
+      if (component.props.className != null) {
         if (className.indexOf('.') !== -1) {
           const classNameList = className.split('.');
 
-          return classNameList.every(function(val) {
-              return hasClassName(component.props.className, val);
-          });
+          return classNameList.every(val => hasClassName(component.props.className, val));
         }
 
         return hasClassName(component.props.className, className);
