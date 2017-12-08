@@ -18,6 +18,7 @@ npm install react-shallow-testutils
 | 0.5.0   | 0.14          |
 | 2.0.0   | 15            |
 | 3.0.0   | 15.5.4        |
+| 3.0.1   | ^15.5.4 & ^16 |
 
 ## Usage
 
