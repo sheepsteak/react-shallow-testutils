@@ -54,13 +54,13 @@
     "lint-staged": "6.0.0",
     "pre-commit": "^1.1.1",
     "prettier": "1.9.1",
-    "react": "^15.5.4",
-    "react-test-renderer": "^15.5.4",
+    "react": "16.2.0",
+    "react-test-renderer": "16.2.0",
     "rimraf": "2.5.2"
   },
   "peerDependencies": {
-    "react": "^15.5.4",
-    "react-test-renderer": "^15.5.4"
+    "react": "^15.5.4 || ^16.0.0-0",
+    "react-test-renderer": "^15.5.4 || ^16.0.0-0"
   },
   "dependencies": {}
 }
