@@ -1,6 +1,6 @@
 # react-shallow-testutils
 
-Replacement for TestUtils when using React's shallow rendering.
+Replacement for TestUtils when using React shallow rendering.
 
 [![NPM](https://nodei.co/npm/react-shallow-testutils.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/react-shallow-testutils)
 
