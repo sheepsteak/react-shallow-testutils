@@ -2,8 +2,6 @@
 
 Replacement for TestUtils when using React's shallow rendering.
 
-[![Circle CI](https://circleci.com/gh/sheepsteak/react-shallow-testutils.png?circle-token=acb1a68cfaeb110ccc4901ac8171750fcbadf5b5)](https://circleci.com/gh/sheepsteak/react-shallow-testutils)
-
 [![NPM](https://nodei.co/npm/react-shallow-testutils.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/react-shallow-testutils)
 
 ```
