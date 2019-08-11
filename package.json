@@ -54,7 +54,7 @@
     "lint-staged": "6.0.0",
     "pre-commit": "^1.1.1",
     "prettier": "1.9.1",
-    "react": "16.2.0",
+    "react": "16.9.0",
     "react-test-renderer": "16.2.0",
     "rimraf": "2.5.2"
   },
