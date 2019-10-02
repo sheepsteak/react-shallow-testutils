@@ -6,13 +6,12 @@
   "scripts": {
     "clean": "rimraf lib/",
     "compile": "babel -d lib/ src/",
-    "lint": "eslint --cache .",
+    "lint": "eslint .",
     "lint-staged": "lint-staged",
     "prepublishOnly": "npm run clean && npm run compile",
     "test": "node specs/support/jasmine"
   },
   "pre-commit": [
-    "lint",
     "lint-staged",
     "test"
   ],
@@ -32,7 +31,12 @@
   },
   "homepage": "https://github.com/sheepsteak/react-shallow-testutils#readme",
   "lint-staged": {
-    "*.{js,json,md}": [
+    "*.js": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.{json,md,yml}": [
       "prettier --write",
       "git add"
     ]
