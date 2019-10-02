@@ -1,8 +1,0 @@
----
-env:
-  jasmine: true
-
-rules:
-  "react/display-name": 0
-  "react/prop-types": 0
-  "react/no-multi-comp": 0
