@@ -13,7 +13,7 @@ const TestWithForm = () => (
     <form action="/" method="post">
       <input id="test" name="test" type="text" />
       <input id="test2" name="test2" type="text" />
-      <button>Send</button>
+      <button type="submit">Send</button>
     </form>
     <OtherComponent />
     <span>Some content</span>

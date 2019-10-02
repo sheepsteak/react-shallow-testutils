@@ -6,7 +6,6 @@ extends:
   - prettier/react
 
 env:
-  es6: true
   node: true
   browser: true
 
@@ -14,5 +13,5 @@ rules:
   react/jsx-filename-extension:
     - 1
     - extensions:
-      - ".js"
-      - ".jsx"
+        - ".js"
+        - ".jsx"
