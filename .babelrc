@@ -1,4 +1,14 @@
 {
-  "plugins": ["transform-export-extensions"],
-  "presets": ["env", "react"]
+  "plugins": ["@babel/plugin-proposal-export-default-from"],
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "8"
+        }
+      }
+    ],
+    "@babel/preset-react"
+  ]
 }

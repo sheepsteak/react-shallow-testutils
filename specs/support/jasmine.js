@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-require("babel-core/register");
+require("@babel/register");
 
 process.env.JASMINE_CONFIG_PATH = "specs/support/jasmine.json";
 
