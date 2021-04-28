@@ -1,0 +1,17 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: weekly
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: eslint
+    versions:
+    - "> 6.1.0"
+  - dependency-name: lint-staged
+    versions:
+    - 10.5.3
+  - dependency-name: react
+    versions:
+    - 17.0.1
